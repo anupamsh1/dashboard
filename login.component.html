@@ -1,0 +1,18 @@
+<form [formGroup] = "userprofileform" (ngSubmit) = "onsubmit()">
+  <label>name:
+    <input type = "text" formControlName = "name">
+  </label>
+  <label>
+    date:
+    <input type = "text" folrmcontrolName = "date">
+  </label>
+  <div formArrayName = "mobiles">
+    <h3>enter mobiles no</h3>
+    <button (click) = "addnewmobile()">Add new mobile</button>
+    <div *ngFor = "let mob of mobiles.controls ; let i = index">
+      <input type = "text" [formControlName] = "i"> 
+
+    </div>
+  </div>
+  <button type = "submit">Submit</button>
+</form>
